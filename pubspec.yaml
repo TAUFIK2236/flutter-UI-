@@ -44,6 +44,17 @@ dependencies:
   path_provider: ^2.0.12
   provider: ^6.0.5
   shared_preferences: ^2.0.17
+  flutter_launcher_icons: ^0.11.0
+
+flutter_icons:
+  android: true
+  iso: true
+  image_path: "assets/images/Logo.png"
+  adaptive_icon_foreground: "assets/images/Logo.png"
+  adaptive_icon_background: "#ffffff"
+
+
+
 
 dev_dependencies:
   flutter_test:
