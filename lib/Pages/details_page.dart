@@ -1,4 +1,6 @@
+import 'package:design/StateManagement/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 class detailsPage extends StatefulWidget {
@@ -15,6 +17,9 @@ class detailsPage extends StatefulWidget {
 class _detailsPageState extends State<detailsPage> {
   @override
   Widget build(BuildContext context) {
+    var productNameList = context.watch<ProductProvider>().productNameList;
+    var cartProduct = context.watch<ProductProvider>().CartProductList;
+
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -23,17 +28,59 @@ class _detailsPageState extends State<detailsPage> {
             Row(
               children: [
                 IconButton(
-                  onPressed: ()=>Navigator.pop(context),
+                  onPressed: () => Navigator.pop(context),
                   icon: Icon(Icons.arrow_back),
                 ),
                 SizedBox(width: 65.w),
                 IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.favorite),
+                  onPressed: () {
+                    if (!productNameList.contains(widget.name)) {
+                      context
+                          .read<ProductProvider>()
+                          .ImageAddToList(widget.pic);
+                      context
+                          .read<ProductProvider>()
+                          .NameAddToList(widget.name);
+                    } else {
+                      context
+                          .read<ProductProvider>()
+                          .NameRemoveFromList(widget.name);
+                      context
+                          .read<ProductProvider>()
+                          .ImageRemoveFromList(widget.pic);
+                    }
+                  },
+                  icon: Icon(
+                    Icons.favorite,
+                    color: productNameList.contains(widget.name)
+                        ? Colors.red
+                        : Colors.black,
+                  ),
                 ),
                 IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.add_shopping_cart_sharp),
+                  onPressed: () {
+                    if (!cartProduct.contains(widget.name)) {
+                      context
+                          .read<ProductProvider>()
+                          .AddCartProduct(widget.name);
+                      context
+                          .read<ProductProvider>()
+                          .AddCartImage(widget.pic);
+                    } else {
+                      context
+                          .read<ProductProvider>()
+                          .RemoveCartProduct(widget.name);
+                      context
+                          .read<ProductProvider>()
+                          .RemoveCartImage(widget.pic);
+                    }
+                  },
+                  icon: Icon(
+                    Icons.add_shopping_cart_sharp,
+                    color: cartProduct.contains(widget.name)
+                        ? Colors.blue
+                        : Colors.black,
+                  ),
                 ),
               ],
             ),
@@ -43,7 +90,7 @@ class _detailsPageState extends State<detailsPage> {
               child: Stack(
                 children: [
                   Positioned(
-                    //top: .h,
+
                     child: Container(
                       height: 42.h,
                       width: 85.w,
@@ -77,11 +124,10 @@ class _detailsPageState extends State<detailsPage> {
               height: 5.h,
             ),
             Padding(
-              padding:  EdgeInsets.only(left:7.1.w),
+              padding: EdgeInsets.only(left: 7.1.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   Text(
                     "Name:",
                     style: TextStyle(
@@ -102,8 +148,9 @@ class _detailsPageState extends State<detailsPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-              SizedBox(
-                height: 2.h,),
+                  SizedBox(
+                    height: 2.h,
+                  ),
                   Text(
                     "Price:",
                     style: TextStyle(

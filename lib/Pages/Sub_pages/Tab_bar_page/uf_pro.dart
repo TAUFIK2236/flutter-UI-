@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:sizer/sizer.dart';
 import 'package:video_player/video_player.dart';
-import 'dart:ui';
+
 
 final List<String> uf_pro_imageLinkList = [
   'https://ufpro.com/storage/app/media/Product%20Images/Pants/Striker%20HT%20Combat%20Pants/Product%20Page%20Compressed/Striker-HT-combat-pants-m-compressed.jpg',
@@ -29,21 +29,7 @@ class uf_pro extends StatefulWidget {
 }
 
 class _uf_proState extends State<uf_pro> {
-  // final List<String> imgo = [
-  //   'https://ufpro.com/storage/app/media/Product%20Images/Pants/Striker%20HT%20Combat%20Pants/Product%20Page%20Compressed/Striker-HT-combat-pants-m-compressed.jpg',
-  //   'https://ufpro.com/storage/app/media/product-catalog/pants/thumb/1920x1920.crop/striker-xt-gen2-combat-pants-navy-blue-hero-2019-739.jpeg',
-  //   'https://proshoptc.com/wp-content/uploads/2021/11/Kopia-Bez-tytulu-5-600x600.png',
-  //   'https://cdn11.bigcommerce.com/s-9c2b3nv4yu/images/stencil/1280x1280/products/458/2129/1__51870.1654883251.jpg?c=2',
-  //   'https://ufpro.com/storage/app/media/Product%20Images/Pants/Striker%20HT%20Combat%20Pants/70620-striker-ht-combat-pants-materials_en.jpg',
-  // ];
 
-  // final List<String> Texto = [
-  //   "STRIKER HT COMBAT PANTS",
-  //   "STRIKER XT GEN.2 COMBAT PANTS",
-  //   "UF PRO TACTICAL WINTER JACKET DELTA ML GEN.2 STEEL GRAY",
-  //   "UF PRO® STRIKER XT GEN.3 COMBAT SHIRT",
-  //   "UF PRO® STRIKER HT COMBAT PANTS (Big and Tall)",
-  // ];
 
   var ProductName = "";
 
@@ -84,7 +70,7 @@ class _uf_proState extends State<uf_pro> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(0.w, 4.h, 67.0.w, 0.0),
+            padding: EdgeInsets.fromLTRB(0.w, 4.h, 67.0.w, 0.0.h),
             child: Text(
               "Products",
               style: TextStyle(
@@ -155,7 +141,7 @@ class Product extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(1.7.w, 5, 0, 0.5.h),
+                padding: EdgeInsets.fromLTRB(1.7.w, 1.h, 0.w, 0.5.h),
                 child: Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -167,7 +153,7 @@ class Product extends StatelessWidget {
                       color: Colors.white,
                       width: 0.3.w,
                     ),
-                    color: const Color(0xff11ad22),
+                    color: const Color(0xff524545),
                     borderRadius: BorderRadius.all(
                       Radius.circular(10.sp),
                     ),
@@ -221,6 +207,6 @@ class Product extends StatelessWidget {
         ),
       ),
     );
-    ;
+
   }
 }

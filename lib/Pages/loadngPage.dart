@@ -1,10 +1,9 @@
-import 'package:design/Pages/homePage.dart';
-import 'package:design/const/AppColors.dart';
+import 'package:design/utilities/Drawr.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:sizer/sizer.dart';
 
-import '../utilities/Drawr.dart';
+
 
 
 
@@ -19,7 +18,7 @@ class _loadingScreenState extends State<loadingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:AppColors.deep_orange,
+      backgroundColor:Colors.white,
       body:buildBody(context)
     );
 
@@ -30,12 +29,10 @@ Widget buildBody(BuildContext context) {
     future: _Homepage(),
     builder: (context, snapshot) {
       return Center(child: Container(
-
-
         decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage('assets/images/LoadSc.png'),
-              fit: BoxFit.fill
+              fit: BoxFit.cover
           ),
         ),
         child:Center(
@@ -44,7 +41,7 @@ Widget buildBody(BuildContext context) {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: 30.h),
-              CircularProgressIndicator(color:Colors.white),
+              CircularProgressIndicator(color:Colors.black),
             ],
           ),
         ),

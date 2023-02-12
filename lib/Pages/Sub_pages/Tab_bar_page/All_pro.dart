@@ -1,9 +1,9 @@
 import 'package:design/utilities/carousel_slider.dart';
+import 'package:design/utilities/categories_product.dart';
+import 'package:design/utilities/sub_utilities/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../utilities/categories_product.dart';
-import '../../../utilities/sub_utilities/product_card.dart';
 
 class All_product extends StatefulWidget {
   const All_product({Key? key}) : super(key: key);

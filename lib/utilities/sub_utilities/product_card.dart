@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:design/Pages/details_page.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../Pages/details_page.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class ProductCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(1.7.w, 5, 0, 0.5.h),
+                padding: EdgeInsets.fromLTRB(1.7.w, 1.h, 0.w, 0.5.h),
                 child: Container(
                   decoration: BoxDecoration(
                     image:  DecorationImage(

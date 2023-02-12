@@ -1,8 +1,11 @@
 import 'package:design/Pages/Sub_pages/Tab_bar_page/Adidas_pro.dart';
+import 'package:design/Pages/Sub_pages/Tab_bar_page/uf_pro.dart';
+import 'package:design/Pages/Sub_pages/cartProduct.dart';
+import 'package:design/Pages/Sub_pages/favorite_page.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../Pages/Sub_pages/Tab_bar_page/uf_pro.dart';
+
 
 class MySearchDelegate extends SearchDelegate {
   List<String> searchResults = ["", "", ""];
@@ -21,16 +24,12 @@ class MySearchDelegate extends SearchDelegate {
         icon: Icon(Icons.clear),
       ),
       IconButton(
-        onPressed: () {},
+        onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder:(context)=>cart_page()));},
         icon: Icon(Icons.shopping_cart),
       ),
       IconButton(
-        onPressed: () {},
+        onPressed: () { Navigator.of(context).push(MaterialPageRoute(builder:(context)=>favorite_page()));},
         icon: Icon(Icons.favorite),
-      ),
-      IconButton(
-        onPressed: () {},
-        icon: Icon(Icons.add_alert),
       ),
     ];
   }
@@ -46,7 +45,7 @@ class MySearchDelegate extends SearchDelegate {
         ); //close searchbar
       },
     );
-    throw UnimplementedError();
+
   }
 
   @override
@@ -62,7 +61,6 @@ var results = allPro.where((element) => element.contains(query)).toList();
       itemCount:results.length,
       itemBuilder: (context, index) {
         final result = results[index];
-        //final images = imageList[index];
         var productIndex = allPro.indexOf(result);
         return Product(
           PRODUCTname: result,
@@ -78,10 +76,7 @@ var results = allPro.where((element) => element.contains(query)).toList();
 
     ),
     );
-    //   return Product(
-    //     Te: "lao",
-    //     img:
-    //     "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iGfQkiYlBOT8/v1/1200x-1.jpg",);
+
   }
 
 
