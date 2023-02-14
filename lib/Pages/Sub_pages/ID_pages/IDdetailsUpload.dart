@@ -37,22 +37,21 @@ class _ProfileState extends State<Profile> {
             child: Stack(
               children: [
                 _image != null
-                    ? ClipOval(
-                        child: Image.file(
-                          (_image!),
-                          height: 18.h,
-                          width: 29.w,
-                          fit: BoxFit.cover,
+                    ? ClipRRect(
+                  borderRadius: BorderRadius.circular(70.sp),
+                  child:  Image.file(
+                    (_image!),
+
+                    fit: BoxFit.cover,
+                  ),
+                )
+                    : ClipRRect(
+                  borderRadius: BorderRadius.circular(70.sp),
+                  child: Image.network(
+                          "https://i.pinimg.com/736x/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg",),
+
                         ),
-                      )
-                    : ClipOval(
-                        child: Image.network(
-                          "https://i.pinimg.com/736x/d9/56/9b/d9569bbed4393e2ceb1af7ba64fdf86a.jpg",
-                          height: 18.h,
-                          width: 29.w,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+
 
 
                 Align(

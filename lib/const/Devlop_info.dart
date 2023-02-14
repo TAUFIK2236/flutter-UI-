@@ -39,11 +39,10 @@ class DevlopInfo extends StatelessWidget {
             SizedBox(
               height: 4.h,
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 39.w),
+            Center(
               child: Container(
-                height: 13.1.h,
-                width: 21.8.w,
+                 height: 20.h,
+                width: 20.h,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/pic.jpg'),
