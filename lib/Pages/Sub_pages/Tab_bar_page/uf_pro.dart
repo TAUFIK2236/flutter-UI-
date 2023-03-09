@@ -86,9 +86,9 @@ class _uf_proState extends State<uf_pro> {
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisExtent: 45.h,
               crossAxisSpacing: .1.w,
               mainAxisSpacing: .1.h,
+              childAspectRatio: 1/1.50,
             ),
             itemBuilder: (_, index) {
               ProductName = uf_pro_name[index];
@@ -125,8 +125,7 @@ class Product extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(8.0.sp),
         child: Container(
-          height: 26.h,
-          width: 31.w,
+
           decoration: BoxDecoration(
             border: Border.all(
               color: Colors.grey,

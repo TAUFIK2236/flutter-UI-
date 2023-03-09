@@ -50,20 +50,15 @@ class _favorite_pageState extends State<favorite_page> {
                     leading: Container(
                       decoration:
                           BoxDecoration(borderRadius: BorderRadius.circular(15)),
-                      child: Column(
-                        children: [
-                          Container(
-                            height: 8.h,
-                            width: 14.w,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                      _myImage1[index],
-                                    ),
-                                    fit: BoxFit.fill)),
-                          ),
-
-                        ],
+                      child: Container(
+                        height: double.infinity,
+                        width: 14.w,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                  _myImage1[index],
+                                ),
+                                fit: BoxFit.fill)),
                       ),
                     ),
                     title: Text(

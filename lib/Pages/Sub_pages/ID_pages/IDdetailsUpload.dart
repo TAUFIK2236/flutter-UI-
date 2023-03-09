@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:design/Pages/Sub_pages/ID_pages/Edit_info.dart';
 import 'package:design/const/Devlop_info.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:kf_drawer/kf_drawer.dart';
 import 'package:sizer/sizer.dart';
@@ -28,12 +29,14 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
+
     var profileInfo = Expanded(
       child: Column(
         children: [
           Container(
-            height: 20.h,
-            width: 30.w,
+          //  color: Colors.red,
+            height: Get.width*.40,
+            width: Get.width*.40,
             child: Stack(
               children: [
                 _image != null
@@ -139,8 +142,8 @@ class _ProfileState extends State<Profile> {
                 Navigator.of(context).push(MaterialPageRoute(builder:(context)=>DevlopInfo()));
               },
               child: Container(
-                height: 3.6.h,
-                width: 5.8.w,
+                height: 2.8.h,
+                width: 2.8.h,
                 decoration: BoxDecoration(
 
                   boxShadow: [
@@ -158,7 +161,7 @@ class _ProfileState extends State<Profile> {
                     Radius.circular(100.sp),
                   ),
                 ),
-                child: Center(child: Icon(Icons.info_outline,size: 16.sp,color: Colors.white,)),
+                child: Center(child: Icon(Icons.info_outline,size: 15.sp,color: Colors.white,)),
               ),
             ) ,
             SizedBox(height: 4.h),

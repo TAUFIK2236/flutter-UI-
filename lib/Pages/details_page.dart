@@ -31,7 +31,7 @@ class _detailsPageState extends State<detailsPage> {
                   onPressed: () => Navigator.pop(context),
                   icon: Icon(Icons.arrow_back),
                 ),
-                SizedBox(width: 65.w),
+             Spacer(),
                 IconButton(
                   onPressed: () {
                     if (!productNameList.contains(widget.name)) {
@@ -57,6 +57,7 @@ class _detailsPageState extends State<detailsPage> {
                         : Colors.black,
                   ),
                 ),
+
                 IconButton(
                   onPressed: () {
                     if (!cartProduct.contains(widget.name)) {

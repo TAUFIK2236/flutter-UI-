@@ -1,5 +1,6 @@
 import 'package:design/utilities/Drawr.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:sizer/sizer.dart';
 
@@ -64,6 +65,7 @@ Future<String> _Homepage() async {
         },
       ),
     );
+
   });
   return "Homepage";
 }
