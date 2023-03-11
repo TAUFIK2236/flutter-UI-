@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
 
           primarySwatch: Colors.blue,
         ),
-        home:loadingScreen()
+        home:const LoadingScreen()
         //loadingScreen()
       );
       }

@@ -13,7 +13,7 @@ final List<Widget> imageSliders = imgList
           width: 1000.w,
           height: 1000.h,
           decoration: BoxDecoration(
-            color:Colors.cyan,
+            color:Colors.black,
             border: Border.all(
               color: Colors.brown,
               width:2.w,
@@ -25,6 +25,8 @@ final List<Widget> imageSliders = imgList
     .toList();
 
 class ComplicatedImageDemo extends StatelessWidget {
+  const ComplicatedImageDemo({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(

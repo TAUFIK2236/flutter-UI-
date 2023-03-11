@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 
-class All_product extends StatefulWidget {
-  const All_product({Key? key}) : super(key: key);
+class AllProduct extends StatefulWidget {
+  const AllProduct({Key? key}) : super(key: key);
 
   @override
-  State<All_product> createState() => _All_productState();
+  State<AllProduct> createState() => _AllProductState();
 }
 
-class _All_productState extends State<All_product> {
+class _AllProductState extends State<AllProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +62,7 @@ class _All_productState extends State<All_product> {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: [
+                children: const [
                   ProductCard(),
                   ProductCard(),
                   ProductCard(),

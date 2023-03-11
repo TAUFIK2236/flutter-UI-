@@ -1,23 +1,20 @@
 import 'package:design/Pages/Sub_pages/Tab_bar_page/Adidas_pro.dart';
 import 'package:design/Pages/Sub_pages/Tab_bar_page/Nike_pro.dart';
 import 'package:design/Pages/Sub_pages/cartProduct.dart';
+import 'package:design/utilities/searchBar.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import '../utilities/searchBar.dart';
 import 'Sub_pages/Tab_bar_page/All_pro.dart';
 import 'Sub_pages/Tab_bar_page/uf_pro.dart';
 import 'package:kf_drawer/kf_drawer.dart';
-
 import 'Sub_pages/favorite_page.dart';
 
-class homePage extends KFDrawerContent {
-  // const homePage({Key? key}) : super(key: key);
-
+class MainHomePage extends KFDrawerContent {
   @override
-  State<homePage> createState() => _homePageState();
+  State<MainHomePage> createState() => _HomePageState();
 }
 
-class _homePageState extends State<homePage> {
+class _HomePageState extends State<MainHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -86,9 +83,11 @@ class _homePageState extends State<homePage> {
                       10.sp,
                     )),
                 child: IconButton(
-                    icon: const Icon(Icons.shopping_cart), onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder:(context)=>cart_page()));
-                }),
+                    icon: const Icon(Icons.shopping_cart),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const cart_page()));
+                    }),
               ),
             ),
             Padding(
@@ -104,9 +103,11 @@ class _homePageState extends State<homePage> {
                       10.sp,
                     )),
                 child: IconButton(
-                    icon: const Icon(Icons.favorite), onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder:(context)=>favorite_page()));
-                }),
+                    icon: const Icon(Icons.favorite),
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const favorite_page()));
+                    }),
               ),
             ),
             // Padding(
@@ -151,10 +152,10 @@ class _homePageState extends State<homePage> {
         ),
         body: const TabBarView(
           children: [
-            All_product(),
+            AllProduct(),
             Adidas(),
             NikePro(),
-            uf_pro(),
+            UfProProductPage(),
           ],
         ),
       ),

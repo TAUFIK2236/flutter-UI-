@@ -18,7 +18,7 @@ class _detailsPageState extends State<detailsPage> {
   @override
   Widget build(BuildContext context) {
     var productNameList = context.watch<ProductProvider>().productNameList;
-    var cartProduct = context.watch<ProductProvider>().CartProductList;
+    var cartProduct = context.watch<ProductProvider>().cartProductListGetter;
 
     return SafeArea(
       child: Scaffold(
@@ -37,17 +37,17 @@ class _detailsPageState extends State<detailsPage> {
                     if (!productNameList.contains(widget.name)) {
                       context
                           .read<ProductProvider>()
-                          .ImageAddToList(widget.pic);
+                          .aImageAddToList(widget.pic);
                       context
                           .read<ProductProvider>()
-                          .NameAddToList(widget.name);
+                          .aNameAddToList(widget.name);
                     } else {
                       context
                           .read<ProductProvider>()
-                          .NameRemoveFromList(widget.name);
+                          .aNameRemoveFromList(widget.name);
                       context
                           .read<ProductProvider>()
-                          .ImageRemoveFromList(widget.pic);
+                          .aImageRemoveFromList(widget.pic);
                     }
                   },
                   icon: Icon(
@@ -63,17 +63,17 @@ class _detailsPageState extends State<detailsPage> {
                     if (!cartProduct.contains(widget.name)) {
                       context
                           .read<ProductProvider>()
-                          .AddCartProduct(widget.name);
+                          .addACartProduct(widget.name);
                       context
                           .read<ProductProvider>()
-                          .AddCartImage(widget.pic);
+                          .addCartImageInList(widget.pic);
                     } else {
                       context
                           .read<ProductProvider>()
-                          .RemoveCartProduct(widget.name);
+                          .removeCartProduct(widget.name);
                       context
                           .read<ProductProvider>()
-                          .RemoveCartImage(widget.pic);
+                          .removeACartImage(widget.pic);
                     }
                   },
                   icon: Icon(

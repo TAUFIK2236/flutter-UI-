@@ -21,15 +21,15 @@ class MySearchDelegate extends SearchDelegate {
             query = "";
           }
         },
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
       ),
       IconButton(
-        onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder:(context)=>cart_page()));},
-        icon: Icon(Icons.shopping_cart),
+        onPressed: () {Navigator.of(context).push(MaterialPageRoute(builder:(context)=>const cart_page()));},
+        icon: const Icon(Icons.shopping_cart),
       ),
       IconButton(
-        onPressed: () { Navigator.of(context).push(MaterialPageRoute(builder:(context)=>favorite_page()));},
-        icon: Icon(Icons.favorite),
+        onPressed: () { Navigator.of(context).push(MaterialPageRoute(builder:(context)=>const favorite_page()));},
+        icon: const Icon(Icons.favorite),
       ),
     ];
   }
@@ -37,7 +37,7 @@ class MySearchDelegate extends SearchDelegate {
   @override
   Widget? buildLeading(BuildContext context) {
     return IconButton(
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
       onPressed: () {
         return close(
           context,
@@ -50,10 +50,10 @@ class MySearchDelegate extends SearchDelegate {
 
   @override
   Widget buildResults(BuildContext context) {
-    print(query);
 
-var allPro = uf_pro_name+AdidasProNameList;
-var allImage = uf_pro_imageLinkList + AdidasImgList;
+
+var allPro = ufProName+adidasProNameList;
+var allImage = ufProImagelinkList + adidasImgList;
 var results = allPro.where((element) => element.contains(query)).toList();
 
 
@@ -63,7 +63,7 @@ var results = allPro.where((element) => element.contains(query)).toList();
         final result = results[index];
         var productIndex = allPro.indexOf(result);
         return Product(
-          PRODUCTname: result,
+          pRODUCTname: result,
           img:allImage[productIndex]
               ,
         );

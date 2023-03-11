@@ -9,13 +9,13 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String Name = "UNName";
+    String name = "UNName";
    String url =  "https://previews.123rf.com/images/ionutparvu/ionutparvu1612/ionutparvu161200915/67602462-business-stamp-sign-text-word-logo-blue-.jpg";
     return Padding(
       padding: EdgeInsets.all(8.0.sp),
       child: InkWell(
         onTap: (){
-          Navigator.of(context).push(MaterialPageRoute(builder:(context)=>detailsPage(pic:url, name:Name)));
+          Navigator.of(context).push(MaterialPageRoute(builder:(context)=>detailsPage(pic:url, name:name)));
         },
         child: Container(
           height: 26.h,
@@ -25,7 +25,7 @@ class ProductCard extends StatelessWidget {
               color: Colors.grey,
               width: 0.3.w,
             ),
-            color: Color(0xffececec),
+            color: const Color(0xffececec),
             borderRadius: BorderRadius.all(
               Radius.circular(10.sp),
             ),
@@ -46,7 +46,7 @@ class ProductCard extends StatelessWidget {
                       color: Colors.white,
                       width: 0.3.w,
                     ),
-                    color: Color(0xff11ad22),
+                    color: const Color(0xff101c10),
                     borderRadius: BorderRadius.all(
                       Radius.circular(10.sp),
                     ),
@@ -86,12 +86,12 @@ class ProductCard extends StatelessWidget {
                       itemSize: 15.sp,
                       itemCount: 5,
                       //  itemPadding: EdgeInsets.symmetric(horizontal:1.w),
-                      itemBuilder: (context, _) => Icon(
+                      itemBuilder: (context, _) => const Icon(
                         Icons.star,
                         color: Colors.amber,
                       ),
                       onRatingUpdate: (rating) {
-                        print(rating);
+
                       },
                     )
                   ],

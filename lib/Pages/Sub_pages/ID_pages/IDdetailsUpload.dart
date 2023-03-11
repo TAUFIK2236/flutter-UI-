@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'package:design/Pages/Sub_pages/ID_pages/Edit_info.dart';
-import 'package:design/const/Devlop_info.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -9,7 +7,7 @@ import 'package:kf_drawer/kf_drawer.dart';
 import 'package:sizer/sizer.dart';
 
 class Profile extends KFDrawerContent {
-  // const Profile({Key? key}) : super(key: key);
+
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -23,7 +21,7 @@ class _ProfileState extends State<Profile> {
     if (image == null) return;
     final imageTemporary = File(image.path);
     setState(() {
-      this._image = imageTemporary;
+      _image = imageTemporary;
     });
   }
 
@@ -33,10 +31,10 @@ class _ProfileState extends State<Profile> {
     var profileInfo = Expanded(
       child: Column(
         children: [
-          Container(
+          SizedBox(
           //  color: Colors.red,
-            height: Get.width*.40,
-            width: Get.width*.40,
+            height: Get.width*.30,
+            width: Get.width*.30,
             child: Stack(
               children: [
                 _image != null
@@ -114,7 +112,7 @@ class _ProfileState extends State<Profile> {
                 children: [
                   SizedBox(width: 4.w),
                   IconButton(
-                    icon: Icon(Icons.arrow_back),
+                    icon: const Icon(Icons.arrow_back),
                     color: Colors.white,
                     onPressed: widget.onMenuPressed,
                   ),
@@ -123,10 +121,10 @@ class _ProfileState extends State<Profile> {
                     width: 67.w,
                   ),
                   IconButton(
-                    icon: Icon(Icons.settings),
+                    icon: const Icon(Icons.settings),
                     color: Colors.white,
                     onPressed: () async {
-                     await Navigator.of(context).push(MaterialPageRoute(builder:(context)=>EditProfile()));
+                     await Navigator.of(context).push(MaterialPageRoute(builder:(context)=>const EditProfile()));
                      setState(() {
 
                      });
@@ -139,7 +137,7 @@ class _ProfileState extends State<Profile> {
             profileInfo,
             InkWell(
               onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder:(context)=>DevlopInfo()));
+               // Navigator.of(context).push(MaterialPageRoute(builder:(context)=>const DevlopInfo()));
               },
               child: Container(
                 height: 2.8.h,

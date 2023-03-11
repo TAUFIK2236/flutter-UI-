@@ -1,21 +1,19 @@
 import 'package:design/utilities/Drawr.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import 'package:sizer/sizer.dart';
 
 
 
 
 
-class loadingScreen extends StatefulWidget {
-  const loadingScreen({Key? key}) : super(key: key);
+class LoadingScreen extends StatefulWidget {
+  const LoadingScreen({Key? key}) : super(key: key);
 
   @override
-  State<loadingScreen> createState() => _loadingScreenState();
+  State<LoadingScreen> createState() => _LoadingScreenState();
 }
 
-class _loadingScreenState extends State<loadingScreen> {
+class _LoadingScreenState extends State<LoadingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,13 +25,13 @@ class _loadingScreenState extends State<loadingScreen> {
 
 Widget buildBody(BuildContext context) {
   return FutureBuilder(
-    future: _Homepage(),
+    future: _homepage(),
     builder: (context, snapshot) {
       return Center(child: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage('assets/images/LoadSc.png'),
-              fit: BoxFit.cover
+              fit: BoxFit.contain
           ),
         ),
         child:Center(
@@ -42,7 +40,7 @@ Widget buildBody(BuildContext context) {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: 30.h),
-              CircularProgressIndicator(color:Colors.black),
+              const CircularProgressIndicator(color:Colors.black),
             ],
           ),
         ),
@@ -51,8 +49,8 @@ Widget buildBody(BuildContext context) {
   );
 }
 
-Future<String> _Homepage() async {
-  await Future.delayed(Duration(seconds: 3)).then((value) {
+Future<String>_homepage() async {
+  await Future.delayed(const Duration(seconds: 3)).then((value) {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(

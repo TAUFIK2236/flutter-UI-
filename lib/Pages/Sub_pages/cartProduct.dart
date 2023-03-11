@@ -19,8 +19,8 @@ class _cart_pageState extends State<cart_page> {
   @override
   Widget build(BuildContext context) {
     Provider.of<ProductProvider>(context).initialState(); //shared_pref initiate for Cart Products
-   final _myList = context.watch<ProductProvider>().CartProductList;
-   final _myImage = context.watch<ProductProvider>().CartImageList;
+   final _myList = context.watch<ProductProvider>().cartProductListGetter;
+   final _myImage = context.watch<ProductProvider>().cartImageListGetter;
 
 
 
@@ -78,10 +78,10 @@ class _cart_pageState extends State<cart_page> {
                   onPressed: () {
                     context
                         .read<ProductProvider>()
-                        .RemoveCartProduct(currentProduct);
+                        .removeCartProduct(currentProduct);
                     context
                         .read<ProductProvider>()
-                        .RemoveCartImage(_myImage[index]);
+                        .removeACartImage(_myImage[index]);
                   },
                   child: Text(
                     "Remove",

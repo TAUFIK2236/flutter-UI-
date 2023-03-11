@@ -1,6 +1,5 @@
 import 'package:design/Pages/Sub_pages/ID_pages/IDdetailsUpload.dart';
 import 'package:design/Pages/homePage.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kf_drawer/kf_drawer.dart';
@@ -8,7 +7,7 @@ import 'package:sizer/sizer.dart';
 
 
 class MainWidget extends StatefulWidget {
-  MainWidget({Key? key}) : super(key: key);
+  const MainWidget({Key? key}) : super(key: key);
 
   @override
   _MainWidgetState createState() => _MainWidgetState();
@@ -21,7 +20,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _drawerController = KFDrawerController(
-      initialPage: homePage(),
+      initialPage: MainHomePage(),
       items: [
         KFDrawerItem.initWithPage(
           text: Text(
@@ -36,7 +35,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
             color: Colors.white,
             size: 20.sp,
           ),
-          page: homePage(),
+          page: MainHomePage(),
         ),
         KFDrawerItem.initWithPage(
           text: Text(
@@ -91,7 +90,7 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
 
 
           ),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,

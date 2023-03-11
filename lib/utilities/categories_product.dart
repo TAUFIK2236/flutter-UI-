@@ -8,7 +8,7 @@ class Categories extends StatelessWidget {
       5, (index) => {"id": index, "name": "Category ${index + 1}"});
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 14.h,
       width: 92.w,
 
@@ -34,7 +34,7 @@ class Categories extends StatelessWidget {
                    Container(
                    height: 10.4.h,
                      width: 20.w,
-                     decoration: BoxDecoration(
+                     decoration: const BoxDecoration(
                        image:DecorationImage(
                          image: NetworkImage("https://previews.123rf.com/images/ionutparvu/ionutparvu1612/ionutparvu161200410/67602131-categories-stamp-sign-text-word-logo-red-.jpg",),
                          fit: BoxFit.fill
@@ -45,7 +45,7 @@ class Categories extends StatelessWidget {
 
                   Text(
                     myProducts[index]["name"],
-                    style:TextStyle(
+                    style:const TextStyle(
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.w900,
                     ),

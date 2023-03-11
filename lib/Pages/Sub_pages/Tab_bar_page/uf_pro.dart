@@ -5,7 +5,7 @@ import 'package:sizer/sizer.dart';
 import 'package:video_player/video_player.dart';
 
 
-final List<String> uf_pro_imageLinkList = [
+final List<String> ufProImagelinkList = [
   'https://ufpro.com/storage/app/media/Product%20Images/Pants/Striker%20HT%20Combat%20Pants/Product%20Page%20Compressed/Striker-HT-combat-pants-m-compressed.jpg',
   'https://ufpro.com/storage/app/media/product-catalog/pants/thumb/1920x1920.crop/striker-xt-gen2-combat-pants-navy-blue-hero-2019-739.jpeg',
   'https://proshoptc.com/wp-content/uploads/2021/11/Kopia-Bez-tytulu-5-600x600.png',
@@ -13,7 +13,7 @@ final List<String> uf_pro_imageLinkList = [
   'https://ufpro.com/storage/app/media/Product%20Images/Pants/Striker%20HT%20Combat%20Pants/70620-striker-ht-combat-pants-materials_en.jpg',
 ];
 
-final List<String> uf_pro_name = [
+final List<String> ufProName = [
   "STRIKER HT COMBAT PANTS",
   "STRIKER XT GEN.2 COMBAT PANTS",
   "UF PRO TACTICAL WINTER JACKET DELTA ML GEN.2 STEEL GRAY",
@@ -21,17 +21,17 @@ final List<String> uf_pro_name = [
   "UF PRO® STRIKER HT COMBAT PANTS (Big and Tall)",
 ];
 
-class uf_pro extends StatefulWidget {
-  const uf_pro({Key? key}) : super(key: key);
+class UfProProductPage extends StatefulWidget {
+  const UfProProductPage({Key? key}) : super(key: key);
 
   @override
-  _uf_proState createState() => _uf_proState();
+  UfProProductPageState createState() => UfProProductPageState();
 }
 
-class _uf_proState extends State<uf_pro> {
+class UfProProductPageState extends State<UfProProductPage> {
 
 
-  var ProductName = "";
+  var productName = "";
 
   late VideoPlayerController _controller;
 
@@ -81,8 +81,8 @@ class _uf_proState extends State<uf_pro> {
             ),
           ),
           GridView.builder(
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: uf_pro_imageLinkList.length,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: ufProImagelinkList.length,
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -91,10 +91,10 @@ class _uf_proState extends State<uf_pro> {
               childAspectRatio: 1/1.50,
             ),
             itemBuilder: (_, index) {
-              ProductName = uf_pro_name[index];
+              productName = ufProName[index];
               return Product(
-                PRODUCTname: ProductName,
-                img: uf_pro_imageLinkList[index],
+                pRODUCTname: productName,
+                img: ufProImagelinkList[index],
               );
             },
           )
@@ -111,17 +111,17 @@ class _uf_proState extends State<uf_pro> {
 }
 
 class Product extends StatelessWidget {
-  const Product({Key? key, required this.PRODUCTname, required this.img})
+  const Product({Key? key, required this.pRODUCTname, required this.img})
       : super(key: key);
 
-  final String PRODUCTname;
+  final String pRODUCTname;
   final String img;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: ()
-      {Navigator.of(context).push(MaterialPageRoute(builder:(context)=>detailsPage(pic:img, name:PRODUCTname)));},
+      {Navigator.of(context).push(MaterialPageRoute(builder:(context)=>detailsPage(pic:img, name:pRODUCTname)));},
       child: Padding(
         padding: EdgeInsets.all(8.0.sp),
         child: Container(
@@ -167,7 +167,7 @@ class Product extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      PRODUCTname,
+                      pRODUCTname,
                       style: TextStyle(
                         fontSize: 10.sp,
                         fontStyle: FontStyle.normal,
@@ -195,7 +195,7 @@ class Product extends StatelessWidget {
                         color: Colors.amber,
                       ),
                       onRatingUpdate: (rating) {
-                        print(rating);
+
                       },
                     )
                   ],

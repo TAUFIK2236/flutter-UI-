@@ -18,7 +18,7 @@ class _favorite_pageState extends State<favorite_page> {
     Provider.of<ProductProvider>(context).initialState();//shared_pref initiate for Cart Products
     final _myList1 = context.watch<ProductProvider>().productNameList;
     final _myImage1 = context.watch<ProductProvider>().productImgeList;
-    var cartProduct = context.watch<ProductProvider>().CartProductList;//for operation add & remove to cart
+    var cartProduct = context.watch<ProductProvider>().cartProductListGetter;//for operation add & remove to cart
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
@@ -74,17 +74,17 @@ class _favorite_pageState extends State<favorite_page> {
                         if (!cartProduct.contains(currentProduct)) {
                           context
                               .read<ProductProvider>()
-                              .AddCartProduct(currentProduct);//Cart product name
+                              .addACartProduct(currentProduct);//Cart product name
                           context
                               .read<ProductProvider>()
-                              .AddCartImage(_myImage1[index]);//Cart picture
+                              .addCartImageInList(_myImage1[index]);//Cart picture
                         } else {
                           context
                               .read<ProductProvider>()
-                              .RemoveCartProduct(currentProduct);
+                              .removeCartProduct(currentProduct);
                           context
                               .read<ProductProvider>()
-                              .RemoveCartImage(_myImage1[index]);
+                              .removeACartImage(_myImage1[index]);
                         }
                       },
                       icon: Icon(
@@ -104,10 +104,10 @@ class _favorite_pageState extends State<favorite_page> {
                       onPressed: (){
                         context
                             .read<ProductProvider>()
-                            .NameRemoveFromList(currentProduct);//remove favorite product
+                            .aNameRemoveFromList(currentProduct);//remove favorite product
                         context
                             .read<ProductProvider>()
-                            .ImageRemoveFromList(_myImage1[index]);//remove favorite product picture
+                            .aImageRemoveFromList(_myImage1[index]);//remove favorite product picture
                       },
 
                     ),
