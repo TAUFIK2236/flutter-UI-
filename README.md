@@ -1,4 +1,4 @@
-#Fucntional UI
+# Functional UI
 
 .
 
