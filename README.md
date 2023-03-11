@@ -1,10 +1,11 @@
-# Functional UI
+# Functional UI Demo
 
 Every button,field and widget in use.
 
 ## About this app
 
-Demo UI with functional Widget.Tried to make a responsive UI.All Image source taken from google.Images used  here for demo purpose
+Demo UI with functional Widget.Tried to make a responsive UI.All Images source taken from google.Images used  here for demo purpose and concept from MonarchMart ecom app
+
 
   Others:
 - Used shared_preferences to save all lists and varible.
@@ -24,4 +25,4 @@ Demo UI with functional Widget.Tried to make a responsive UI.All Image source ta
 <img src="https://github.com/TAUFIK2236/flutter-UI-/blob/master/lib/photos/favoritePage.png" height="354px" width="200px" ></img>
 <img src="https://github.com/TAUFIK2236/flutter-UI-/blob/master/lib/photos/CartPage.png" height="354px" width="200px" ></img>
 
-
+Adviced by [Hasan Masruru AKA kaku](https://github.com/HasanMasrur)
