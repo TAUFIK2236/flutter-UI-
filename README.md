@@ -1,8 +1,8 @@
 # Functional UI
 
-.
+Every button,field and widget in use.
 
-## Getting Started
+## About this app
 
 This project is a starting point for a Flutter application.
 
