@@ -6,11 +6,8 @@ Every button,field and widget in use.
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://github.com/TAUFIK2236/flutter-UI-/blob/master/lib/photos/LoadingPage.png" height="354px" width="200px" ></img>
+<img src="https://github.com/TAUFIK2236/flutter-UI-/blob/master/lib/photos/Profile.png" height="354px" width="200px" ></img>
+<img src="https://github.com/TAUFIK2236/flutter-UI-/blob/master/lib/photos/ImagePickerInUse.png" height="354px" width="200px" ></img>
+<img src="https://github.com/TAUFIK2236/flutter-UI-/blob/master/lib/photos/KDrawer.png" height="354px" width="200px" ></img>
+<img src="https://github.com/TAUFIK2236/flutter-UI-/blob/master/lib/photos/All_page.png" height="354px" width="200px" ></img>
