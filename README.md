@@ -4,7 +4,7 @@ Every button,field and widget in use.
 
 ## About this app
 
-UI with functional Widget.Tried to make a responsive UI.
+Demo UI with functional Widget.Tried to make a responsive UI.All Image source taken from google.Images used  here for demo purpose
 
   Others:
 - Used shared_preferences to save all lists and varible.
