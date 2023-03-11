@@ -4,7 +4,12 @@ Every button,field and widget in use.
 
 ## About this app
 
-This project is a starting point for a Flutter application.
+UI with functional Widget.Tried to make a responsive UI.
+
+  Others:
+--  Used shared_preferences to save all lists and varible.
+--  For Statemanagement used Provider.
+--  Most of basics widgets of flutter in use. 
 
 <img src="https://github.com/TAUFIK2236/flutter-UI-/blob/master/lib/photos/LoadingPage.png" height="354px" width="200px" ></img>
 <img src="https://github.com/TAUFIK2236/flutter-UI-/blob/master/lib/photos/Profile.png" height="354px" width="200px" ></img>
